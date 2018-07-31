@@ -1,0 +1,20 @@
+#!/bin/bash
+
+params=$@
+
+if [ $# -eq 1 ] && [ $1 = 'init' ]
+then
+  params=sphinx-quickstart
+fi
+
+if [ $# -eq 1 ] && [ $1 = 'html' ]
+then
+  params="make html"
+fi
+
+
+sudo docker run --rm \
+	 -u $(id -u):$(id -g) \
+	 -v $(pwd):/sphinx/docs \
+	 -it nti-sphinx \
+	 $params
