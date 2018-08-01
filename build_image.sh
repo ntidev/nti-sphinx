@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo docker build -t nti-sphinx .
+sudo docker build -t ntidev/sphinx .
